@@ -11,7 +11,7 @@ my_token = 'NTU2NDQxNTA0OTQwNDI1MjE4.D25yJA.0p1yf-jbMXo1lu3zBTsqLjxoD0U'
 client = commands.Bot(command_prefix = '/')
 
 client.remove_command('help')
-status = ['/help | SEBY-GUARD', 'made by fl0w. 💔#1337', "with {} players"]
+status = ['/help | SEBY-GUARD', 'made by fl0w. 💔#1337', "with SEBY!"]
 
 players = {}
 
