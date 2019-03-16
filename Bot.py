@@ -47,13 +47,13 @@ async def help(ctx):
     author = ctx.message.author
     embed = discord.Embed(Colour = discord.Colour.orange())
     embed.set_author(name = 'Help Commands')
-    embed.add_field(name =';say', value ='Returns what the user says.', inline=False)
-    embed.add_field(name =';purge', value ='Deletes certain amount of messages, default amount is 10', inline=False)
-    embed.add_field(name =';join', value ='The bot joins the current voice channel, the user must be in a voice channel to use this command', inline=False)
-    embed.add_field(name =';leave', value ='The bot leaves the current voice channel.', inline=False)
-    embed.add_field(name =';play', value ='Plays the audio from a youtube url', inline=False)
-    embed.add_field(name =';serverinfo', value ='Gives the server information on the selected user,so you must do ;serverinfo and mention the user!', inline=False)
-
+    embed.add_field(name ='/say', value ='Returns what the user says.', inline=False)
+    embed.add_field(name ='/purge', value ='Deletes certain amount of messages, default amount is 10', inline=False)
+    embed.add_field(name ='/join', value ='The bot joins the current voice channel, the user must be in a voice channel to use this command', inline=False)
+    embed.add_field(name ='/leave', value ='The bot leaves the current voice channel.', inline=False)
+    embed.add_field(name ='/play', value ='Plays the audio from a youtube url', inline=False)
+    embed.add_field(name ='/serverinfo', value ='Gives the server information on the selected user,so you must do ;serverinfo and mention the user!', inline=False)
+    embed.add_field(name ='Bot creat de fl0w. 💔#1337 pt sebi!', value ='Server-ul lui fl0w: https://discord.gg/Nr7kxSJ', inline=False)
     await client.send_message(author, embed=embed)
 
 
