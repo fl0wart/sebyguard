@@ -11,8 +11,10 @@ async def on_ready():
     print ("My username is " + Mike.user.name + " and i am running with the ID: " + Mike.user.id)
     await Mike.change_presence(game=discord.Game(name="the infractions! 👀", type=3))
     print ("Started")
+    
 bot.remove_command('help')
 @Mike.command(pass_context = True)
+@commands.has_permissions(manage_messages = True)
 async def say(ctx, *args):
     mesg = ' '.join(args)
     await Mike.delete_message(ctx.message)
