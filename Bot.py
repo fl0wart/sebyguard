@@ -1,24 +1,21 @@
-import asyncio
 import discord
-from discord.ext.commands import Bot
+from discord.ext import commands
+import asyncio
 
-
-Mike = Bot('p!')
-
-@Mike.event
+bot=commands.Bot(command_prefix='p!')
+@bot.event
 async def on_ready():
-    print ("Starting up")
-    print ("My username is " + Mike.user.name + " and i am running with the ID: " + Mike.user.id)
-    await Mike.change_presence(game=discord.Game(name="the infractions! 👀", type=3))
-    print ("Started")
-    
-Mike.remove_command('help')
+    print('Logged in as '+bot.user.name+' (ID:'+bot.user.id+') | Connected to '+str(len(bot.servers))+' servers | Connected to '+str(len(set(bot.get_all_members())))+' users')
+    print('--------')
+    await bot.change_presence(game=discord.Game(name="the criminals! 👀", type=3))
 
-@Mike.command(pass_context = True)
+bot.remove_command('help')
+
+@bot.command(pass_context = True)
+@commands.has_permissions(administrator = True)
 async def say(ctx, *args):
     mesg = ' '.join(args)
-    await Mike.delete_message(ctx.message)
-    return await Mike.say(mesg)
+    await bot.delete_message(ctx.message)
+    return await bot.say(mesg)
 
-
-Mike.run('NTU4MjA1MDQxOTA3OTkwNTI4.D3Tcig.erxYozqaEr6gZBqZfex-EWJ-7ik')
+bot.run('NTU4MjA1MDQxOTA3OTkwNTI4.D3Tcig.erxYozqaEr6gZBqZfex-EWJ-7ik')
